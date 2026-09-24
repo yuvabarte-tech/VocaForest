@@ -1,0 +1,8 @@
+{
+  "name": "Remix: VocaForest Learning Hub",
+  "description": "An interactive full-stack vocabulary learning and gamified forest adventure combining 3.0 class engagement with 4.0 visual growth, featuring student progress syncing, interactive guides, boy-oriented avatars, and a real-time teacher analytics portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

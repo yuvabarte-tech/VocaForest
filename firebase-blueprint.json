@@ -1,0 +1,61 @@
+{
+  "entities": {
+    "student": {
+      "title": "Student",
+      "description": "Student user profile and vocabulary progress",
+      "type": "object",
+      "properties": {
+        "username": { "type": "string" },
+        "fullName": { "type": "string" },
+        "avatar": { "type": "string" },
+        "xp": { "type": "number" },
+        "level": { "type": "number" },
+        "quizAttempts": { "type": "number" },
+        "correctAnswers": { "type": "number" },
+        "incorrectAnswers": { "type": "number" },
+        "pouchCount": { "type": "number" },
+        "streak": { "type": "number" },
+        "unlockedTrophies": { "type": "array" },
+        "unlockedCards": { "type": "array" },
+        "inquiryEntries": { "type": "array" },
+        "journalEntries": { "type": "array" },
+        "certificates": { "type": "array" }
+      },
+      "required": ["username", "fullName"]
+    },
+    "noticeboard": {
+      "title": "Noticeboard",
+      "description": "Classroom announcement noticeboard",
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "appState": {
+      "title": "AppState",
+      "description": "Full application state backup",
+      "type": "object",
+      "properties": {
+        "students": { "type": "object" },
+        "thesaurus": { "type": "array" },
+        "noticeboard": { "type": "object" },
+        "version": { "type": "number" }
+      }
+    }
+  },
+  "firestore": {
+    "/students/{studentId}": {
+      "schema": { "$ref": "#/entities/student" },
+      "description": "All registered student profiles and progress"
+    },
+    "/system/noticeboard": {
+      "schema": { "$ref": "#/entities/noticeboard" },
+      "description": "Classroom noticeboard message"
+    },
+    "/vocaforest/{docId}": {
+      "schema": { "$ref": "#/entities/appState" },
+      "description": "Classroom database backup document"
+    }
+  }
+}
